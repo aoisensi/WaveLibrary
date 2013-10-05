@@ -41,13 +41,19 @@
   <ItemGroup>
     <Compile Include="Fourier\Fft.cs" />
     <Compile Include="IO\WaveStream.cs" />
-    <Compile Include="IWave.cs" />
+    <Compile Include="Tone\ITone.cs" />
+    <Compile Include="Tone\SineTone.cs" />
+    <Compile Include="Wave\IWave.cs" />
+    <Compile Include="Tone\Pitch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Wave.cs" />
-    <Compile Include="Tone\SubWave.cs" />
+    <Compile Include="Wave\BufferWave.cs" />
+    <Compile Include="Wave\SequenceWave.cs" />
+    <Compile Include="Wave\SubWave.cs" />
+    <Compile Include="Wave\ToneWave.cs" />
     <Compile Include="Window\HanningWindow.cs" />
     <Compile Include="Window\Window.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

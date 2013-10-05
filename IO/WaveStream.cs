@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using WaveLibrary.Wave;
 
 namespace WaveLibrary.IO
 {
@@ -28,7 +29,7 @@ namespace WaveLibrary.IO
         const UInt32 FmtTag = 0x20746d66;
         const UInt32 DataTag = 0x61746164;
 
-        public static Wave Read(Stream stream)
+        public static BufferWave Read(Stream stream)
         {
             FmtHeader fmt = new FmtHeader();
             byte[] sampleData = null;
@@ -72,7 +73,7 @@ namespace WaveLibrary.IO
                 }
             }
 
-            Wave wave = CreateWave(fmt, sampleData);
+            BufferWave wave = CreateWave(fmt, sampleData);
             if (wave == null) throw new FileLoadException();
             return wave;
         }
@@ -83,7 +84,7 @@ namespace WaveLibrary.IO
         /// <param name="fmt"></param>
         /// <param name="data"></param>
         /// <returns></returns>
-        private static Wave CreateWave(FmtHeader fmt, byte[] data)
+        private static BufferWave CreateWave(FmtHeader fmt, byte[] data)
         {
             if (fmt.format != 1) return null;
             int length = data.Length / ((fmt.bit / 8) * fmt.channels);
@@ -101,7 +102,7 @@ namespace WaveLibrary.IO
                 default:
                     return null;
             }
-            return new Wave(d, (int)fmt.sampleRate);
+            return new BufferWave(d, (int)fmt.sampleRate);
         }
 
         public static void Write(Stream stream, IWave wave)

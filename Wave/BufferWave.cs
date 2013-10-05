@@ -6,26 +6,26 @@ using System.Text;
 using System.Threading.Tasks;
 using WaveLibrary.IO;
 
-namespace WaveLibrary
+namespace WaveLibrary.Wave
 {
-    public class Wave : IWave
+    public class BufferWave : IWave
     {
         double[] samples;
 
         int sampleRate;
 
-        public static Wave FromStream(Stream stream)
+        public static BufferWave FromStream(Stream stream)
         {
             return WaveStream.Read(stream);
         }
 
-        public static Wave FromPath(string path)
+        public static BufferWave FromPath(string path)
         {
             var fs = new FileStream(path, FileMode.Open);
             return FromStream(fs);
         }
 
-        public Wave(double[] samples, int sampleRate)
+        public BufferWave(double[] samples, int sampleRate)
         {
             this.samples = samples;
             this.sampleRate = sampleRate;
