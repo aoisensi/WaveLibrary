@@ -76,6 +76,7 @@ namespace WaveLibrary.IO
             if (wave == null) throw new FileLoadException();
             return wave;
         }
+
         /// <summary>
         /// 現状はChannel1しか取らない
         /// </summary>
