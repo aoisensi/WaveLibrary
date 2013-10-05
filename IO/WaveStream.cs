@@ -105,7 +105,6 @@ namespace WaveLibrary.IO
 
         public static void Write(Stream stream, IWave wave)
         {
-            if (wave.IsInf) throw new Exception("無限waveは保存できません");
             using (var bw = new BinaryWriter(stream))
             {
                 FmtHeader fmt = new FmtHeader();

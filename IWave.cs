@@ -12,8 +12,6 @@ namespace WaveLibrary
 
         int Length { get; }
 
-        bool IsInf { get; }
-
         double Read(int n);
 
         IEnumerable<double> Reads();

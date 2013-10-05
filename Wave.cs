@@ -50,10 +50,5 @@ namespace WaveLibrary
         {
             get { return sampleRate; }
         }
-
-        public bool IsInf
-        {
-            get { return false; }
-        }
     }
 }

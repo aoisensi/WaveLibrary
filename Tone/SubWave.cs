@@ -35,14 +35,9 @@ namespace WaveLibrary.Tone
             get { return count; }
         }
 
-        public bool IsInf
-        {
-            get { return false; }
-        }
-
         public double Read(int n)
         {
-            if (original.IsInf || n < count)
+            if (n < count)
                 return original.Read(index + n);
             throw new IndexOutOfRangeException();
         }
