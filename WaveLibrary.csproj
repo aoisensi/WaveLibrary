@@ -42,6 +42,7 @@
     <Compile Include="Fourier\Fft.cs" />
     <Compile Include="IO\WaveStream.cs" />
     <Compile Include="Tone\ITone.cs" />
+    <Compile Include="Tone\MixedTone.cs" />
     <Compile Include="Tone\SineTone.cs" />
     <Compile Include="Wave\IWave.cs" />
     <Compile Include="Tone\Pitch.cs" />

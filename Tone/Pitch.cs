@@ -20,5 +20,10 @@ namespace WaveLibrary.Tone
         {
             return 69 + (int)(12 * Math.Log(Hz / 440.0, 2.0));
         }
+
+        public static int ToScale(double hz)
+        {
+            return 69 + (int)(12 * Math.Log(hz / 440.0, 2.0));
+        }
     }
 }

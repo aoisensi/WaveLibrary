@@ -131,5 +131,13 @@ namespace WaveLibrary.IO
             }
         }
 
+        public static void Write(string filepath, IWave wave)
+        {
+            using (var fs = new FileStream(filepath, FileMode.OpenOrCreate, FileAccess.Write))
+            {
+                Write(fs, wave);
+            }
+        }
+
     }
 }
